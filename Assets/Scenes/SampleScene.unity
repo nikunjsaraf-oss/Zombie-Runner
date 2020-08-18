@@ -783,6 +783,14 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8063245766903964751, guid: 11e2e99ce3d8905439433b442ad4cbe0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.41482
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063245766903964751, guid: 11e2e99ce3d8905439433b442ad4cbe0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.17942
+      objectReference: {fileID: 0}
     - target: {fileID: 8063245767498417682, guid: 11e2e99ce3d8905439433b442ad4cbe0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.65
@@ -841,7 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 85476728}
     - target: {fileID: 8063245767498417694, guid: 11e2e99ce3d8905439433b442ad4cbe0, type: 3}
       propertyPath: m_StoppingDistance
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e2e99ce3d8905439433b442ad4cbe0, type: 3}
