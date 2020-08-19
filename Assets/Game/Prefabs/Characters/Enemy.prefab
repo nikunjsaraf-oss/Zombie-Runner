@@ -104,11 +104,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8063245767498417682}
-  - component: {fileID: 8063245767498417693}
   - component: {fileID: 8063245767498417681}
   - component: {fileID: 8063245767498417680}
   - component: {fileID: 8063245767498417695}
   - component: {fileID: 8063245767498417694}
+  - component: {fileID: 8063245767498417693}
   - component: {fileID: 6801499214457635398}
   - component: {fileID: 993071315790228603}
   - component: {fileID: 3797674874327579813}
@@ -134,20 +134,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8063245767498417693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8063245767498417692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eada0e105d713e42969c2a6a594e09e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  chaseRange: 5.53
 --- !u!33 &8063245767498417681
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -233,6 +219,21 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8063245767498417693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8063245767498417692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eada0e105d713e42969c2a6a594e09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  chaseRange: 5.53
+  turnSpeed: 5
 --- !u!114 &6801499214457635398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,5 +278,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743ef8d047f1dd04ea2b1883c3000104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   damage: 50

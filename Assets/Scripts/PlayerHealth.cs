@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-  [SerializeField] float hitPoints = 200;
+  [SerializeField] float hitPoints = 100;
+
+  DeathHandler death;
+
+
+  private void Start() 
+  {
+      death = GetComponent<DeathHandler>();   
+  }
 
    public void TakeDamage(float damage)
    {
       hitPoints -= damage;
       if(hitPoints == 0)
       {
-         Debug.Log("Dead");
+         death.HandleDeath();
       }
    }
 }
