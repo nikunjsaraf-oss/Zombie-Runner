@@ -4,21 +4,28 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] Transform target = null;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5;
 
     NavMeshAgent navMeshAgent;
     float distanceFromTarget = Mathf.Infinity;
     bool isProvoked = false;
+    Enemyhealth health;
 
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<Enemyhealth>();
     }
 
     private void Update()
     {
+        if(health.IsDead()) 
+        {
+            enabled = false;
+            navMeshAgent.enabled = false;
+        }
         distanceFromTarget = Vector3.Distance(target.position, transform.position);
         
         if(isProvoked)

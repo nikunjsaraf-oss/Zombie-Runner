@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathHandler : MonoBehaviour
 {
-    [SerializeField] Canvas gameOverUI;
+    [SerializeField] Canvas gameOverUI = null;
 
     private void Start() 
     {
@@ -15,6 +15,7 @@ public class DeathHandler : MonoBehaviour
     {
         gameOverUI.enabled = true;
         Time.timeScale = 0;
+        FindObjectOfType<SwitchWeapon>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
