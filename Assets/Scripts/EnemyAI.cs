@@ -4,7 +4,6 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target = null;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5;
 
@@ -12,29 +11,36 @@ public class EnemyAI : MonoBehaviour
     float distanceFromTarget = Mathf.Infinity;
     bool isProvoked = false;
     Enemyhealth health;
+    Transform target;
 
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<Enemyhealth>();
+        target = FindObjectOfType<PlayerHealth>().transform;
     }
 
     private void Update()
     {
-        if(health.IsDead()) 
+               if (health.IsDead())
         {
-            enabled = false;
+ 
+            this.enabled = false;
             navMeshAgent.enabled = false;
+            GetComponent<Collider>().enabled = false;
         }
-        distanceFromTarget = Vector3.Distance(target.position, transform.position);
-        
-        if(isProvoked)
+        else
         {
-            EngageTarget();
-        }
-        else if(distanceFromTarget <= chaseRange)
-        {
-            isProvoked = true;
+            distanceFromTarget = Vector3.Distance(target.position, transform.position); //calcs the distance between enemy & target
+ 
+            if (isProvoked)
+            {
+                EngageTarget();
+            }
+            else if (distanceFromTarget <= chaseRange)
+            {
+                isProvoked = true;
+            }
         }
     }
 
@@ -80,7 +86,7 @@ public class EnemyAI : MonoBehaviour
     
     private void OnDrawGizmos()
     {
-        Gizmos.color = new Color(255, 255, 255, 1f);
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
     }
 }
