@@ -14,14 +14,6 @@ public class SceneLoader : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
-    }
-
-    private void Update() 
-    {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        }
+        //Time.timeScale = 1;
     }
 }

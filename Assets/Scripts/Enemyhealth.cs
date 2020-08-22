@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemyhealth : MonoBehaviour
 {
    [SerializeField] float hitPoints = 100;
+   [SerializeField] UnityEvent onDie;
 
-   bool isDead = false;
+   bool isDead = false;   
 
 
    public bool IsDead()
@@ -29,6 +31,7 @@ public class Enemyhealth : MonoBehaviour
     private void Die()
     {
        if (isDead) return;
+       onDie.Invoke();
        isDead = true;
        GetComponent<Animator>().SetTrigger("Die");
     }

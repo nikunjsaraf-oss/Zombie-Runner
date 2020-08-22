@@ -2,7 +2,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType ammoType ;
     [SerializeField] float delayBetweenShots = 0.5f;
     [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] UnityEvent onShoot;
   
     bool canShoot = true;
 
@@ -56,6 +57,7 @@ public class Weapon : MonoBehaviour
     private void PlayEffects()
     {
         muzzleFlash.Play();
+        onShoot.Invoke();
     }
 
     private void ProcessRaycast()
